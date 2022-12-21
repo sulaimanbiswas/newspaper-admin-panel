@@ -17,6 +17,14 @@
     <link rel="stylesheet" type="text/css" href="css/style.css" />
   </head>
   <body>
+    <!-- PreLoader -->
+    <div id="preloader">
+      <div class="circle">
+        <div class="wave"></div>
+      </div>
+    </div>
+    <!-- PreLoader -->
+
     <!-- HEADER  -->
 
     <header class="header header-fixed header-light">
@@ -62,7 +70,7 @@
                         <div class="avatar mr-1">
                           <img
                             class="img-fluid"
-                            src="images/team/03.jpg"
+                            src="images/team/01.jpg"
                             alt=""
                           />
                         </div>
@@ -91,13 +99,22 @@
 
     <!-- HEADER -->
 
-    <!-- **********  WRAPPER  ********** -->
+    <!--  WRAPPER  -->
 
     <div class="wrapper">
       <div class="sidebar-panel nicescrollbar sidebar-panel-light">
         <ul class="sidebar-menu">
-          <li class="sidebar-header text-white">Dashboard</li>
           <li class="active">
+            <a href="index.html">
+              <i class="la la-home"></i> <span>Dashboard</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="index.html">
+              <i class="la la-home"></i> <span>Dashboard</span>
+            </a>
+          </li>
+          <li class="">
             <a href="index.html">
               <i class="la la-home"></i> <span>Dashboard</span>
             </a>
@@ -110,7 +127,7 @@
         </ul>
       </div>
 
-      <!-- **********  main-panel  ********** -->
+      <!--  main-panel  -->
       <div class="main-panel">
         <div class="panel-hedding">
           <div class="row mb-4 align-items-end">
@@ -124,7 +141,7 @@
         </div>
       </div>
     </div>
-    <!-- **********  Wrapper  ********** -->
+    <!--  Wrapper  -->
 
     <!--  JAVASCRIPT  -->
 
@@ -139,5 +156,12 @@
 
     <!-- custom -->
     <script src="js/custom.js"></script>
+
+    <script>
+      const loader = document.getElementById("preloader");
+      window.addEventListener("load", () => {
+        loader.style.display = "none";
+      });
+    </script>
   </body>
 </html>
