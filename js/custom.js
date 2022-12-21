@@ -1,6 +1,7 @@
 /* ----------------------------------
   Script
 -------------------------------------
+    00. Preloader
     01. SidebarMenu
     02. Nicescrollbar
     03. Popover tooltip tooltip
@@ -25,6 +26,15 @@
     22. Google Map
     23. Calendar
 */
+
+/* ------------------------------------------------------------------------
+ * Preloader
+ * ------------------------------------------------------------------------ */
+
+const loader = document.getElementById("preloader");
+window.addEventListener("load", () => {
+  loader.style.display = "none";
+});
 
 (function ($) {
   "use strict"; // Start of use strict
