@@ -4,13 +4,17 @@
     00. Preloader
     01. SidebarMenu
     02. Nicescrollbar
+    09. Data tables
+    20. Summernote
+
+    
+    
     03. Popover tooltip tooltip
     04. Select2
     05. Zmdi minus
     06. Sortable
     07. ShowLeft
     08. Chart chartjs 
-    09. Data tables
     10. Datepicker
     11. Duallistbox
     12. Mask
@@ -21,10 +25,8 @@
     17. Peity
     18. Rangeslider
     19. Sparkline
-    20. Summernote
     21. TouchSpin
-    22. Google Map
-    23. Calendar
+    
 */
 
 /* ------------------------------------------------------------------------
@@ -35,6 +37,19 @@ const loader = document.getElementById("preloader");
 window.addEventListener("load", () => {
   loader.style.display = "none";
 });
+
+/* ------------------------------------------------------------------------
+ * Slug
+ * ------------------------------------------------------------------------ */
+
+const title = document.getElementById("title");
+const slug = document.getElementById("slug");
+
+
+
+/* ------------------------------------------------------------------------
+ * End
+ * ------------------------------------------------------------------------ */
 
 (function ($) {
   "use strict"; // Start of use strict
@@ -1046,7 +1061,10 @@ window.addEventListener("load", () => {
           { latLng: [3.2, 73.22], name: "Maldives" },
           { latLng: [35.88, 14.5], name: "Malta" },
           { latLng: [12.05, -61.75], name: "Grenada" },
-          { latLng: [13.16, -61.23], name: "Saint Vincent and the Grenadines" },
+          {
+            latLng: [13.16, -61.23],
+            name: "Saint Vincent and the Grenadines",
+          },
           { latLng: [13.16, -59.55], name: "Barbados" },
           { latLng: [17.11, -61.85], name: "Antigua and Barbuda" },
           { latLng: [-4.61, 55.45], name: "Seychelles" },
@@ -1853,7 +1871,7 @@ window.addEventListener("load", () => {
     var _summernote = $(".summernote");
     if (_summernote.exists()) {
       _summernote.summernote({
-        height: 713,
+        height: 400,
       });
     }
 
@@ -1938,358 +1956,6 @@ window.addEventListener("load", () => {
       _touch_spin6.TouchSpin({
         buttondown_class: "btn btn-link",
         buttonup_class: "btn btn-link",
-      });
-    }
-
-    /* ------------------------------------------------------------------------
-     * Google Map
-     * ------------------------------------------------------------------------ */
-    var _map_basic = $("#map-basic");
-    if (_map_basic.exists()) {
-      new GMaps({
-        div: "#map-basic",
-        lat: 51.507194,
-        lng: -0.129072,
-      });
-    }
-
-    var _maps_markers = $("#maps-markers");
-    if (_maps_markers.exists()) {
-      var loc_map;
-      loc_map = new GMaps({
-        el: "#maps-markers",
-        lat: 51.507194,
-        lng: -0.129072,
-        scrollwheel: false,
-      });
-      loc_map.addMarker({
-        lat: 51.507194,
-        lng: -0.129072,
-        title: "Info wondow for Location Marker",
-        infoWindow: {
-          content: "<p> Infinity Softway </p>",
-        },
-      });
-    }
-
-    var _maps_street_view = $("#maps-street-view");
-    if (_maps_street_view.exists()) {
-      GMaps.createPanorama({
-        el: "#maps-street-view",
-        lat: 51.507194,
-        lng: -0.129072,
-      });
-    }
-
-    var _maps_type = $("#maps-type");
-    if (_maps_type.exists()) {
-      var type_map;
-
-      type_map = new GMaps({
-        div: "#maps-type",
-        lat: 51.507194,
-        lng: -0.129072,
-        mapTypeControlOptions: {
-          mapTypeIds: ["hybrid", "roadmap", "satellite", "terrain", "osm"],
-        },
-      });
-      type_map.addMapType("osm", {
-        getTileUrl: function (coord, zoom) {
-          return (
-            "https://a.tile.openstreetmap.org/" +
-            zoom +
-            "/" +
-            coord.x +
-            "/" +
-            coord.y +
-            ".png"
-          );
-        },
-        tileSize: new google.maps.Size(256, 256),
-        name: "OpenStreetMap",
-        maxZoom: 18,
-      });
-      type_map.setMapTypeId("osm");
-    }
-
-    var _maps_overlays = $("#maps-overlays");
-    if (_maps_overlays.exists()) {
-      var overlays_map;
-      overlays_map = new GMaps({
-        div: "#maps-overlays",
-        lat: 51.507194,
-        lng: -0.129072,
-      });
-      overlays_map.drawOverlay({
-        lat: overlays_map.getCenter().lat(),
-        lng: overlays_map.getCenter().lng(),
-        content: '<div class="maps-overlay">London </div>',
-        verticalAlign: "top",
-        horizontalAlign: "center",
-      });
-    }
-
-    var _maps_georss = $("#maps-georss");
-    if (_maps_georss.exists()) {
-      var georss_map, infoWindow;
-      infoWindow = new google.maps.InfoWindow({});
-      georss_map = new GMaps({
-        div: "#maps-georss",
-        zoom: 12,
-        lat: 51.507194,
-        lng: -0.129072,
-      });
-      georss_map.loadFromKML({
-        url: "http://api.flickr.com/services/feeds/geo/?g=322338@N20&lang=en-us&format=feed-georss",
-        suppressInfoWindows: true,
-        events: {
-          click: function (point) {
-            infoWindow.setContent(point.featureData.infoWindowHtml);
-            infoWindow.setPosition(point.latLng);
-            infoWindow.open(georss_map.georss_map);
-          },
-        },
-      });
-    }
-
-    /* ------------------------------------------------------------------------
-     * Calendar
-     * ------------------------------------------------------------------------ */
-    var _calendar = $("#calendar");
-    if (_calendar.exists()) {
-      _calendar.fullCalendar({
-        header: {
-          left: "prev,next today",
-          center: "title",
-          right: "month,agendaWeek,agendaDay",
-        },
-        defaultDate: "2021-01-01",
-        navLinks: true, // can click day/week names to navigate views
-        selectable: true,
-        editable: true,
-        droppable: true, // this allows things to be dropped onto the calendar
-        drop: function () {
-          // is the "remove after drop" checkbox checked?
-          if ($("#drop-remove").is(":checked")) {
-            // if so, remove the element from the "Draggable Events" list
-            $(this).remove();
-          }
-        },
-        eventLimit: true, // allow "more" link when too many events
-        events: [
-          {
-            title: "All Day Event",
-            start: "2021-03-01",
-            className: "event-primary",
-          },
-          {
-            title: "Long Event",
-            start: "2021-03-07",
-            end: "2021-03-10",
-            className: "event-secondary",
-          },
-          {
-            id: 999,
-            title: "Repeating Event",
-            start: "2021-03-09T16:00:00",
-            className: "event-success",
-          },
-          {
-            id: 999,
-            title: "Repeating Event",
-            start: "2021-03-16T16:00:00",
-            className: "event-danger",
-          },
-          {
-            title: "Conference",
-            start: "2021-03-11",
-            end: "2021-03-13",
-            className: "event-warning",
-          },
-          {
-            title: "Meeting",
-            start: "2021-03-12T10:30:00",
-            end: "2021-03-12T12:30:00",
-            className: "event-info",
-          },
-          {
-            title: "Lunch",
-            start: "2021-03-12T12:00:00",
-          },
-          {
-            title: "Meeting",
-            start: "2021-03-12T14:30:00",
-            className: "event-light",
-          },
-          {
-            title: "Happy Hour",
-            start: "2021-03-12T17:30:00",
-          },
-          {
-            title: "Dinner",
-            start: "2021-03-12T20:00:00",
-            className: "event-primary",
-          },
-          {
-            title: "Birthday Party",
-            start: "2021-03-13T07:00:00",
-            className: "event-info",
-          },
-          {
-            title: "Click for Google",
-            url: "http://google.com/",
-            start: "2021-03-28",
-            className: "event-light",
-          },
-        ],
-      });
-    }
-
-    var _external_events = $("#external-events .fc-event");
-    if (_external_events.exists()) {
-      _external_events.each(function () {
-        // store data so the calendar knows to render an event upon drop
-        $(this).data("event", {
-          title: $.trim($(this).text()), // use the element's text as the event title
-          stick: true, // maintain when user navigates (see docs on the renderEvent method)
-          color: $(this).data("color"),
-        });
-
-        // make the event draggable using jQuery UI
-        $(this).draggable({
-          zIndex: 999,
-          revert: true, // will cause the event to go back to its
-          revertDuration: 0, //  original position after the drag
-        });
-      });
-    }
-
-    // page is now ready, initialize the calendar...
-    var _calendar = $("#calendar");
-    if (_calendar.exists()) {
-      _calendar.fullCalendar({
-        // put your options and callbacks here
-        header: {
-          left: "prev,next today",
-          center: "title",
-          right: "month,agendaWeek,agendaDay,listMonth",
-        },
-        navLinks: true, // can click day/week names to navigate views
-        editable: true,
-        droppable: true, // this allows things to be dropped onto the calendar
-      });
-    }
-
-    var _calendar_list = $("#calendar-list");
-    if (_calendar_list.exists()) {
-      _calendar_list.fullCalendar({
-        header: {
-          left: "prev,next today",
-          center: "title",
-          right: "listDay,listWeek,month",
-        },
-
-        // customize the button names,
-        // otherwise they'd all just say "list"
-        views: {
-          listDay: { buttonText: "list day" },
-          listWeek: { buttonText: "list week" },
-        },
-
-        defaultView: "listWeek",
-        defaultDate: "2021-03-12",
-        navLinks: true, // can click day/week names to navigate views
-        editable: true,
-        eventLimit: true, // allow "more" link when too many events
-        events: [
-          {
-            title: "All Day Event",
-            start: "2021-03-01",
-          },
-          {
-            title: "Long Event",
-            start: "2021-03-07",
-            end: "2021-03-10",
-          },
-          {
-            id: 999,
-            title: "Repeating Event",
-            start: "2021-03-09T16:00:00",
-          },
-          {
-            id: 999,
-            title: "Repeating Event",
-            start: "2021-03-16T16:00:00",
-          },
-          {
-            title: "Conference",
-            start: "2021-03-11",
-            end: "2021-03-13",
-          },
-          {
-            title: "Meeting",
-            start: "2021-03-12T10:30:00",
-            end: "2021-03-12T12:30:00",
-          },
-          {
-            title: "Lunch",
-            start: "2021-03-12T12:00:00",
-          },
-          {
-            title: "Meeting",
-            start: "2021-03-12T14:30:00",
-          },
-          {
-            title: "Happy Hour",
-            start: "2021-03-12T17:30:00",
-          },
-          {
-            title: "Dinner",
-            start: "2021-03-12T20:00:00",
-          },
-          {
-            title: "Birthday Party",
-            start: "2021-03-13T07:00:00",
-          },
-          {
-            title: "Click for Google",
-            url: "http://google.com/",
-            start: "2021-03-28",
-          },
-        ],
-      });
-    }
-
-    var _start_tour = $("#start-tour");
-    if (_start_tour.exists()) {
-      // Instance the tour
-      var tour = new Tour({
-        debug: false,
-        backdrop: true,
-        steps: [
-          {
-            element: "#tour-01",
-            title: "Title of my step",
-            content: "Content of my step",
-          },
-          {
-            element: "#tour-02",
-            title: "Title of my step",
-            content: "Content of my step",
-          },
-          {
-            element: "#tour-03",
-            title: "Title of my step",
-            content: "Content of my step",
-          },
-        ],
-      });
-
-      // Initialize the tour
-      tour.init();
-      // start tour
-      _start_tour.click(function () {
-        tour.restart();
       });
     }
 

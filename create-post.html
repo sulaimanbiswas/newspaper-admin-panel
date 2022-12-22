@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="AB InfoTech LTD" />
+    <meta name="description" content="Your Description" />
+
+    <!-- TITLE -->
+    <title>Admin - Responsive Admin Dashboard Template</title>
+
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="images/favicon.ico" />
+
+    <!-- STYLE -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+  </head>
+  <body>
+    <!-- PreLoader -->
+    <div id="preloader">
+      <div class="circle">
+        <div class="wave"></div>
+      </div>
+    </div>
+    <!-- PreLoader -->
+
+    <!-- HEADER  -->
+
+    <header class="header header-fixed header-light">
+      <div class="header-middle">
+        <div class="logo-color logo-color-light">
+          <div class="logo">
+            <div class="logo-middle">
+              <a href="index.html"><img src="images/logo.png" alt="Logo" /></a>
+            </div>
+          </div>
+        </div>
+        <div class="header-topbar">
+          <div class="topbar-left">
+            <a class="side-toggle" href="#!">
+              <i class="la la-bars"></i>
+            </a>
+          </div>
+          <div class="topbar-right">
+            <ul>
+              <li>
+                <div class="add-new">
+                  <a class="btn btn-outline-dark" href="#">
+                    Live Site <span class="las la-external-link-alt"></span
+                  ></a>
+                </div>
+              </li>
+              <li class="dropdown show user-profile">
+                <a
+                  class="dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <div class="avatar avatar-sm mr-1">
+                    <img class="img-fluid" src="images/team/01.jpg" alt="" />
+                  </div>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right">
+                  <div class="profile-pic">
+                    <div class="row">
+                      <div class="col-8">
+                        <div class="profile-name">
+                          <h4>Admin</h4>
+                          <a href="#"> admin@janobani.com</a>
+                        </div>
+                      </div>
+                      <div class="col-4">
+                        <div class="avatar mr-1">
+                          <img
+                            class="img-fluid"
+                            src="images/team/01.jpg"
+                            alt=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="profile-info">
+                    <a class="dropdown-item" href="my-profile.html">
+                      <i class="la la-edit"></i> My Profile
+                    </a>
+                    <div class="separator my-2"></div>
+                    <a
+                      class="btn btn-outline-primary outline-gray btn-sm mt-3"
+                      href="#"
+                    >
+                      <i class="la la-power-off"></i> Logout
+                    </a>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- HEADER -->
+
+    <!--  WRAPPER  -->
+
+    <div class="wrapper">
+      <div class="sidebar-panel nicescrollbar sidebar-panel-light">
+        <ul class="sidebar-menu">
+          <li class="">
+            <a href="index.html">
+              <i class="la la-home"></i> <span>Dashboard</span>
+            </a>
+          </li>
+          <li class="active">
+            <a href="#">
+              <i class="la la-edit"></i> <span>Post</span>
+              <i class="la la-angle-right down-arrow"></i>
+            </a>
+            <ul class="sidebar-submenu">
+              <li class="active">
+                <a href="create-post.html"
+                  ><i class=""></i> <span> Create Post </span>
+                </a>
+              </li>
+              <li class="">
+                <a href="pending-post.html"
+                  ><i class=""></i> <span> Pending Post </span>
+                </a>
+              </li>
+              <li class="">
+                <a href="all-post.html"
+                  ><i class=""></i> <span> All Post </span>
+                </a>
+              </li>
+              <li class="">
+                <a href="feature-post.html"
+                  ><i class=""></i> <span> Featured Post </span>
+                </a>
+              </li>
+              <li class="">
+                <a href="fb-banner.html"
+                  ><i class=""></i> <span> Facebook Banner </span>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <!--  main-panel  -->
+      <div class="main-panel">
+        <div class="panel-hedding">
+          <div class="row mb-4 align-items-end">
+            <div class="col-md-6">
+              <h1>Create Post</h1>
+            </div>
+          </div>
+          <!-- Content Card -->
+          <form class="cmxform" id="signupForm" method="get">
+            <div class="row">
+              <div class="col-lg-8">
+                <div class="card">
+                  <div class="card-body">
+                    <!-- Title -->
+                    <div class="form-group">
+                      <label for="title" class="h5">Title</label>
+                      <input
+                        id="title"
+                        class="form-control"
+                        name="title"
+                        type="text"
+                      />
+                    </div>
+
+                    <!-- End Title -->
+
+                    <!-- Slug -->
+
+                    <div class="form-group">
+                      <label for="slug" class="h5">Slug</label>
+                      <input
+                        id="slug"
+                        class="form-control"
+                        name="slug"
+                        type="text"
+                      />
+                    </div>
+
+                    <!-- End Slug -->
+
+                    <!-- Sub Title -->
+                    <div class="form-group">
+                      <label for="sub-title" class="h5">Sub Title</label>
+                      <input
+                        id="sub-title"
+                        class="form-control"
+                        name="sub-title"
+                        type="text"
+                      />
+                    </div>
+                    <!-- End Sub Title -->
+
+                    <!-- Description -->
+                    <div class="form-group">
+                      <label for="description" class="h5">Description</label>
+                      <textarea id="description" class="summernote"> </textarea>
+                    </div>
+                    <!-- End Description -->
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="card">
+                  <div class="card-body">
+                    <!-- Local Location -->
+
+                    <div class="custom-control custom-checkbox form-group">
+                      <input
+                        type="checkbox"
+                        class="custom-control-input"
+                        id="location"
+                        name="location"
+                      />
+                      <label class="custom-control-label h5" for="location"
+                        >Local Location</label
+                      >
+                    </div>
+                    <div class="form-group">
+                      <div class="row">
+                        <div class="col-12 col-md-4">
+                          <p class="card-title-text">Division</p>
+                          <select class="custom-select">
+                            <option selected class="d-none">
+                              Select Division
+                            </option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                        <div class="col-12 col-md-4">
+                          <p class="card-title-text">Districts</p>
+                          <select class="custom-select">
+                            <option selected class="d-none">
+                              Select District
+                            </option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                        <div class="col-12 col-md-4">
+                          <p class="card-title-text">Upazila</p>
+                          <select class="custom-select">
+                            <option selected class="d-none">
+                              Select Upazila
+                            </option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- End Local Location -->
+
+                    <!-- Category -->
+
+                    <div class="form-group">
+                      <label class="h5" for="category">Category</label>
+                      <div class="row">
+                        <div class="col-12 col-md-6">
+                          <p class="card-title-text">Category</p>
+                          <select class="custom-select">
+                            <option selected class="d-none">
+                              Select Category
+                            </option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                        <div class="col-12 col-md-6">
+                          <p class="card-title-text">Sub Category</p>
+                          <select class="custom-select">
+                            <option selected class="d-none">
+                              Select Sub Category
+                            </option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="custom-control custom-checkbox form-group">
+                      <input
+                        type="checkbox"
+                        class="custom-control-input"
+                        id="cat-lead"
+                        name="cat-lead"
+                      />
+                      <label class="custom-control-label" for="cat-lead"
+                        >Category Lead Post</label
+                      >
+                    </div>
+
+                    <!-- End Category -->
+
+                    <!-- Featured & Author -->
+
+                    <div class="form-group">
+                      <label class="h5" for="category">Featured & Author</label>
+                      <div class="row">
+                        <div class="col-12 col-md-6">
+                          <p class="card-title-text">Featured</p>
+                          <select class="custom-select">
+                            <option selected class="">Select Featured</option>
+                            <option value="1">Middle Featured</option>
+                            <option value="2">Left 1</option>
+                            <option value="3">Left 2</option>
+                            <option value="3">Left 3</option>
+                            <option value="3">Left 4</option>
+                            <option value="3">Left 5</option>
+                          </select>
+                        </div>
+                        <div class="col-12 col-md-6">
+                          <p class="card-title-text">Reporter</p>
+                          <select class="custom-select">
+                            <option selected class="d-none">
+                              Select Reporter
+                            </option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- End Featured & Author -->
+
+                    <!-- Images -->
+
+                    <div class="form-group">
+                      <label>Photo</label>
+                      <div class="custom-file">
+                        <input
+                          type="file"
+                          class="custom-file-input"
+                          id="photo"
+                        />
+                        <label class="custom-file-label" for="photo"
+                          >Choose file</label
+                        >
+                      </div>
+                    </div>
+
+                    <!-- End Images -->
+
+                    <!-- Images Title -->
+
+                    <div class="form-group">
+                      <label for="imageTitle" class="h5">Images Title</label>
+                      <textarea
+                        id="imageTitle"
+                        class="form-control"
+                        name="imageTitle"
+                      ></textarea>
+                    </div>
+
+                    <!-- End Images Title -->
+
+                    <!-- Video Embed -->
+
+                    <div class="form-group">
+                      <label for="video-embed" class="h5"
+                        >Video Embed Link</label
+                      >
+                      <input
+                        id="video-embed"
+                        class="form-control"
+                        name="video-embed"
+                        type="text"
+                      />
+                    </div>
+
+                    <!-- End Video Embed -->
+
+                    <!-- Tag -->
+
+                    <div class="form-group">
+                      <label for="tag" class="h5">Tag</label>
+                      <input
+                        id="tagsinput-markup"
+                        type="text"
+                        class="form-control"
+                        value="janobani"
+                        data-role="tagsinput"
+                      />
+                    </div>
+
+                    <!-- End Tag -->
+
+                    <div class="form-group text-right">
+                      <input
+                        class="submit btn btn-primary"
+                        type="submit"
+                        value="Submit"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          <!-- Content Card -->
+        </div>
+      </div>
+    </div>
+    <!--  Wrapper  -->
+
+    <!--  JAVASCRIPT  -->
+
+    <!-- jquery -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+
+    <!-- bootstrap -->
+    <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
+
+    <!-- jquery-nicescroll -->
+    <script src="js/jquery-nicescroll/jquery.nicescroll.min.js"></script>
+
+    <!-- summernote -->
+    <script src="js/summernote/summernote.min.js"></script>
+
+    <!-- Bootstrap tagsinput -->
+    <script src="js/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+
+    <!-- custom -->
+    <script src="js/custom.js"></script>
+  </body>
+</html>
