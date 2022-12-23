@@ -45,8 +45,6 @@ window.addEventListener("load", () => {
 const title = document.getElementById("title");
 const slug = document.getElementById("slug");
 
-
-
 /* ------------------------------------------------------------------------
  * End
  * ------------------------------------------------------------------------ */
@@ -803,8 +801,8 @@ const slug = document.getElementById("slug");
         defaultTime: "current",
         showInputs: true,
         icons: {
-          up: "fa fa-angle-up",
-          down: "fa fa-angle-down",
+          up: "la la-angle-up",
+          down: "la la-angle-down",
         },
       });
     }
@@ -815,8 +813,8 @@ const slug = document.getElementById("slug");
         showSeconds: true,
         showInputs: true,
         icons: {
-          up: "fa fa-angle-up",
-          down: "fa fa-angle-down",
+          up: "la la-angle-up",
+          down: "la la-angle-down",
         },
       });
     }
