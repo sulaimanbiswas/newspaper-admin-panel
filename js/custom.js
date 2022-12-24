@@ -1,43 +1,32 @@
-/* ----------------------------------
-  Script
--------------------------------------
-    00. Preloader
-    01. SidebarMenu
-    02. Nicescrollbar
-    09. Data tables
-    20. Summernote
-
-    
-    
-*/
-
-/* ------------------------------------------------------------------------
+/* ------------
  * Preloader
- * ------------------------------------------------------------------------ */
+ * ------------ */
 
 const loader = document.getElementById("preloader");
 window.addEventListener("load", () => {
   loader.style.display = "none";
 });
 
-/* ------------------------------------------------------------------------
+/* ------------
  * Slug
- * ------------------------------------------------------------------------ */
+ * ------------ */
 
 const title = document.getElementById("title");
 const slug = document.getElementById("slug");
 
-/* ------------------------------------------------------------------------
+
+
+/* ------------
  * End
- * ------------------------------------------------------------------------ */
+ * ------------ */
 
 (function ($) {
   "use strict"; // Start of use strict
 
   $(document).ready(function () {
-    /* ------------------------------------------------------------------------
+    /* ------------
      * SidebarMenu
-     * ------------------------------------------------------------------------ */
+     * ------------ */
     $.sidebarMenu = function (menu) {
       var _animationSpeed = 300,
         _subMenuSelector = ".sidebar-submenu";
@@ -90,9 +79,9 @@ const slug = document.getElementById("slug");
       return this.length > 0;
     };
 
-    /* ------------------------------------------------------------------------
+    /* ------------
      * nicescrollbar
-     * ------------------------------------------------------------------------ */
+     * ------------ */
     var _nicescrollbar = $(".nicescrollbar");
     if (_nicescrollbar.exists()) {
       _nicescrollbar.each(function () {
@@ -107,17 +96,37 @@ const slug = document.getElementById("slug");
       });
     }
 
-    /* ------------------------------------------------------------------------
+    /* ------------
      * Data tables
-     * ------------------------------------------------------------------------ */
+     * ------------ */
     var _table_simple = $("#table-simple");
     if (_table_simple.exists()) {
       _table_simple.DataTable();
     }
 
-    /* ------------------------------------------------------------------------
+    /* ------------
+     * showLeft
+     * ------------ */
+    $("#showLeft").click(function () {
+      $(".animate-menu-left").toggleClass("animate-menu-open");
+    });
+
+    $("#showRight").click(function () {
+      $(".animate-menu-right").toggleClass("animate-menu-open");
+    });
+
+    $(".side-toggle").click(function () {
+      $(".wrapper").toggleClass("sidebar-panel-collapse");
+      $(".nicescrollbar").getNiceScroll().resize();
+    });
+
+    $(".sidebar-panel").hover(function () {
+      $(".nicescrollbar").getNiceScroll().resize();
+    });
+
+    /* ------------
      * Summernote
-     * ------------------------------------------------------------------------ */
+     * ------------ */
     var _summernote = $(".summernote");
     if (_summernote.exists()) {
       _summernote.summernote({
