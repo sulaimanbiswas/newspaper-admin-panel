@@ -8,16 +8,7 @@ window.addEventListener("load", () => {
 });
 
 /* ------------
- * Slug
- * ------------ */
-
-const title = document.getElementById("title");
-const slug = document.getElementById("slug");
-
-
-
-/* ------------
- * End
+ * Plugin
  * ------------ */
 
 (function ($) {
@@ -35,18 +26,12 @@ const slug = document.getElementById("slug");
         var _this = $(this);
         var _checkElement = _this.next();
 
-        if (
-          _checkElement.is(_subMenuSelector) &&
-          _checkElement.is(":visible")
-        ) {
+        if (_checkElement.is(_subMenuSelector) && _checkElement.is(":visible")) {
           _checkElement.slideUp(_animationSpeed, function () {
             _checkElement.removeClass("menu-open");
           });
           _checkElement.parent("li").removeClass("active");
-        } else if (
-          _checkElement.is(_subMenuSelector) &&
-          !_checkElement.is(":visible")
-        ) {
+        } else if (_checkElement.is(_subMenuSelector) && !_checkElement.is(":visible")) {
           //If the menu is not visible
           //Get the parent menu
           var _parent = _this.parents("ul").first();
